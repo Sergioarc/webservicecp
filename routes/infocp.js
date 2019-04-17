@@ -14,7 +14,12 @@ router.post('/', function(req, res, next) {
     const redis = req.redis;
     redis.get(req.body.cp, (error, result) => {
         if (error) {
-            console.log(error);
+            res.json({
+                status: 'ERROR',
+                code: '400',
+                msg: 'Bad request',
+                data: error,
+            });
             throw error;
         }
         if(result === null){
@@ -39,12 +44,12 @@ router.post('/', function(req, res, next) {
                         redis.set(req.body.cp, JSON.stringify(resp[0]), redis.print);
                         res.json(response);
                     })
-                    .catch(function (error) {
+                    .catch(function (err) {
                         res.json({
                             status: 'ERROR',
                             code: '400',
                             msg: 'Bad request',
-                            data: error,
+                            data: err,
                         });
                     });
                 }
