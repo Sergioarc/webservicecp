@@ -1,4 +1,4 @@
-# Web Service of CC
+# Web Service of CP
 
 Web service to provide information of CP, with basic auth.
 
