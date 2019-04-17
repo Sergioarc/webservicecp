@@ -1,6 +1,6 @@
 # Web Service of CC
 
-Web service to provide information of CP.
+Web service to provide information of CP, with basic auth.
 
 Run project
 
@@ -8,3 +8,7 @@ Run project
 2. $ npm start 
 
 Project listening in port 3000
+
+Endpoints
+
+/fetchinfocp
